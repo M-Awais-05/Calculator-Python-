@@ -29,7 +29,7 @@ def clear_field():
 
 # Create main window ( User interface )
 root = tk.Tk()
-root.geometry("300x260")
+root.geometry("310x260")
 root.title("Simple Calculator")
 
 # Text field to display input and result
@@ -77,14 +77,15 @@ btn_close.grid(row=5, column=3)
 btn_division = tk.Button(root, text="/", command=lambda: add_to_calculation("/"), width=5, font=("Arial", 12))
 btn_division.grid(row=5, column=4)
 #---------------------------------------<>----------------------------------------#
-# 6nd Row with 2 columns having buttons (cleaer, result)
-# Equal button spans columns 1 and 2 (column=1, columnspan=2)
-btn_clear = tk.Button(root, text="C", command=clear_field, width=10, font=("Arial", 12))
-btn_clear.grid(row=6, column=1, columnspan=2)
-
-# Clear button spans columns 3 and 4 (column=2, columnspan=2)
-btn_equal = tk.Button(root, text="=", command=evaluate_calculation, width=10, font=("Arial", 12))
-btn_equal.grid(row=6, column=3, columnspan=2)
+# 6nd Row with 4 columns having buttons (cleaer, equal, dot and modulas)
+btn_clear = tk.Button(root, text="C", command=clear_field, width=5, font=("Arial", 12))
+btn_clear.grid(row=6, column=1)
+btn_dot = tk.Button(root, text=".", command=lambda: add_to_calculation("."), width=5, font=("Arial", 12))
+btn_dot.grid(row=6, column=2)
+btn_equal = tk.Button(root, text="=", command=evaluate_calculation, width=5, font=("Arial", 12))
+btn_equal.grid(row=6, column=3)
+btn_mod = tk.Button(root, text="%", command=lambda:  add_to_calculation("%"), width=5, font=("Arial", 12))
+btn_mod.grid(row=6, column=4)
 
 # Run the application
 root.mainloop()
